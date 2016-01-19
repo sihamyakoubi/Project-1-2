@@ -8,6 +8,7 @@ print ("het werkt - Siham")
 
 import pygame
 import random
+import time
 pygame.init()
  
 display_width = 800
