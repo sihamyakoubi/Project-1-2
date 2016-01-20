@@ -101,7 +101,7 @@ def game_intro():
                 
         gameDisplay.fill(white)
         largeText = pygame.font.SysFont("comicsansms",115)
-        TextSurf, TextRect = text_objects("Survivor!", largeText)
+        TextSurf, TextRect = text_objects("Survivor!!", largeText)
         TextRect.center = ((display_width/2),50)
         gameDisplay.blit(TextSurf, TextRect)
 
