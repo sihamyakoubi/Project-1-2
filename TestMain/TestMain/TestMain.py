@@ -22,7 +22,7 @@ bright_green = (10,255,10)
 bright_red = ( 255,10,10)
 block_color = (53,115,255)
  
-car_width = 73
+car_width = 1
  
 gameDisplay = pygame.display.set_mode((display_width,display_height))
 pygame.display.set_caption('A bit Racey')
@@ -136,9 +136,9 @@ def game_loop():
  
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LEFT:
-                    x_change = -5
+                    x_change = -15
                 if event.key == pygame.K_RIGHT:
-                    x_change = 5
+                    x_change = 15
  
             if event.type == pygame.KEYUP:
                 if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
