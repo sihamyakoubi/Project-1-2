@@ -1,4 +1,4 @@
-import pygame
+﻿import pygame
 
 pygame.init()
 pygame.display.set_caption ("Survivor") # titel van het programma (blauwe balk boven in)
@@ -27,3 +27,5 @@ def game_menu():
     screen.fill(white)
     pygame.display.update()
     time.tick(60)
+
+game_menu()
