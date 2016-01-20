@@ -48,7 +48,6 @@ def game_menu():
 
         print (event)
         screen.fill(white)
-
         largeText = pygame.font.SysFont("comicsansms",115)
         TextSurf, TextRect = text_objects("Survivor", largeText)
         TextRect.center = ((width*0.5),(height*0.15))
