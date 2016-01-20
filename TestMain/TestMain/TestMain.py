@@ -13,11 +13,14 @@ pygame.init()
  
 display_width = 800
 display_height = 600
+blocklength = 170
+blockheight = 50
  
 black = (0,0,0)
 white = (255,255,255)
 green = (0,255,0)
 red = (255,0,0)
+blue = (0,0,255)
 bright_green = (10,255,10)
 bright_red = ( 255,10,10)
 block_color = (53,115,255)
@@ -29,6 +32,8 @@ pygame.display.set_caption('A bit Racey')
 clock = pygame.time.Clock()
  
 carImg = pygame.image.load("content/blok.png")
+boardImg = pygame.image.load("content/board.png")
+board = pygame.transform.scale(boardImg,((display_width),(display_height)))
  
  
 def things_dodged(count):
@@ -41,6 +46,8 @@ def things(thingx, thingy, thingw, thingh, color):
  
 def car(x,y):
     gameDisplay.blit(carImg,(x,y))
+    button("EXIT",display_width-170,0,170,50,red,bright_red,game_intro)
+
  
 def text_objects(text, font):
     textSurface = font.render(text, True, black)
@@ -94,17 +101,29 @@ def game_intro():
                 
         gameDisplay.fill(white)
         largeText = pygame.font.SysFont("comicsansms",115)
-        TextSurf, TextRect = text_objects("A bit Racey", largeText)
-        TextRect.center = ((display_width/2),(display_height/2))
+        TextSurf, TextRect = text_objects("Survivor!", largeText)
+        TextRect.center = ((display_width/2),50)
         gameDisplay.blit(TextSurf, TextRect)
 
-        button("GO!",150,450,100,50,green,bright_green,game_loop)
-        button("Quit",550,450,100,50,red,bright_red,quitgame)
+        button("GO!",display_width/2-blocklength/2,150,blocklength,blockheight,green,bright_green,game_loop)
+        button("INSTRUCTIONS",display_width/2-blocklength/2,230,blocklength,blockheight,blue,blue,instructions)
+        button("EXIT",display_width/2-blocklength/2,310,blocklength,blockheight,red,bright_red,quitgame)
 
         pygame.display.update()
         clock.tick(15)
         
-        
+def instructions():
+    while (instructions == True):
+        for event in pygame.event.get():
+            #print(event)
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+    largetext = pygame.font.SysFont("comicsansms", 20)
+    Textplace, TextRect = text_objects("Instructions",largetext)
+    TextRect.center = ((display_width/2),50)
+    gameDisplay.blit(Textplace,TextRect)
     
     
 
@@ -146,7 +165,7 @@ def game_loop():
  
         x += x_change
         gameDisplay.fill(white)
- 
+        gameDisplay.blit(board,(0,0))
         things(thing_startx, thing_starty, thing_width, thing_height, block_color)
  
  
@@ -177,5 +196,6 @@ def game_loop():
 
 game_intro()
 game_loop()
+instructions()
 pygame.quit()
 quit()
