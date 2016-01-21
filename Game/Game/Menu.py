@@ -45,7 +45,7 @@ def game_menu():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 quitGame()
-        print (event)
+
         screen.fill(white)
         largeText = pygame.font.SysFont("comicsansms",115)
         TextSurf, TextRect = text_objects("Survivor", largeText)
