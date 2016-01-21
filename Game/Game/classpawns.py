@@ -5,10 +5,10 @@ class Pawns:
         self.colour = colour
         self.fightercard = fightercard
 
-pawn1 = Pawns(pawnPosition3,"Manny Pecquiao", "Yellow",fightercard3)
-pawn2 = Pawns(pawnPosition2,"Rocky Belboa", "Red",fightercard2)
-pawn3 = Pawns(pawnPosition4,"Badr Heri", "Green",fightercard4)
-pawn4 = Pawns(pawnPosition1,"Mike Tysen", "Blue",fightercard1)
+pawn3 = Pawns((0,10),"Manny Pecquiao", "Yellow",fightercard3)
+pawn2 = Pawns((10,0),"Rocky Belboa", "Red",fightercard2)
+pawn4 = Pawns((10,10),"Badr Heri", "Green",fightercard4)
+pawn1 = Pawns((0,0),"Mike Tysen", "Blue",fightercard1)
 
 
 

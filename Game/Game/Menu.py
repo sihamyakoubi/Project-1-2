@@ -10,6 +10,8 @@ red = (255,0,0)
 green = (0,255,0)
 blue = (0,0,255)
 screen = pygame.display.set_mode((width,height)) # scherm
+hand = pygame.image.load("Content/boxing_small.jpg")
+hand2 = pygame.transform.flip(hand,180,0)
 
 time = pygame.time.Clock ()
 
@@ -52,12 +54,14 @@ def game_menu():
         TextSurf, TextRect = text_objects("Survivor", largeText)
         TextRect.center = ((width*0.5),(height*0.15))
         screen.blit(TextSurf, TextRect)
-
+        screen.blit(hand,(width*0.25,height/2))
+        screen.blit(hand2,(width*0.60,height/2))
         button("Help",width*0.9,height*0.9,50,50,white,black,None)
         button("Start",width*0.45,height*0.4,100,50,white,black,None)
         button("Load Game",width*0.45,height*0.5,100,50,white,black,None)
         button("Setting",width*0.45,height*0.6,100,50,white,black,None)
         button("Quit",width*0.45,height*0.7,100,50,white,black,quitGame)
+
         pygame.display.update()
         time.tick(60)
 
