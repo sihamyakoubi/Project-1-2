@@ -1,5 +1,4 @@
 ﻿import pygame
-from Help import *
 pygame.init()
 pygame.display.set_caption ("Survivor") # titel van het programma (blauwe balk boven in)
 
@@ -10,14 +9,8 @@ red = (255,0,0)
 green = (0,255,0)
 blue = (0,0,255)
 screen = pygame.display.set_mode((width,height)) # scherm
-
 time = pygame.time.Clock ()
 
-
-
-    
-    
-       
 
 def quitGame():
     pygame.quit()
@@ -44,7 +37,6 @@ def button(msg,x,y,w,h,ic,ac,action=None):
     textRect.center = ( (x+(w/2)), (y+(h/2)) )
     screen.blit(textSurf, textRect)
 
-
 def game_menu():
     menu = True
     while True:
@@ -68,6 +60,7 @@ def game_menu():
         
         pygame.display.update()
         time.tick(60)
+
 def Help_Menu():
     while True:
         Help = pygame.image.load("content/Help.png")
@@ -78,4 +71,5 @@ def Help_Menu():
         pygame.display.update()
         time.tick(60)
         pygame.display.set_mode((width,height))  
+
 game_menu()
