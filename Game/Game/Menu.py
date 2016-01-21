@@ -62,15 +62,17 @@ def game_menu():
         time.tick(60)
 
 def Help_Menu():
+    Help = pygame.image.load("content/Help.png")
+    Help = pygame.transform.scale(Help,(width,height))
     while True:
-        Help = pygame.image.load("content/Help.png")
-        Help = pygame.transform.scale(Help,(width,height))
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                quitGame()
         screen.blit(Help, (0,0 ))
         button("X",width-20,0,20,20,red,white,game_menu)
              
         pygame.display.update()
         time.tick(60)
-        pygame.display.set_mode((width,height))  
 
 
 
