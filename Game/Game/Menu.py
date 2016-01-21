@@ -2,7 +2,7 @@
 pygame.init()
 pygame.display.set_caption ("Survivor") # titel van het programma (blauwe balk boven in)
 
-width, height = 900, 780
+width, height = 800, 650
 black = (0,0,0)
 white = (255,255,255)
 red = (255,0,0)
