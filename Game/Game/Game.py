@@ -15,6 +15,5 @@ while True:
         if event.type == pygame.QUIT:
             pygame.quit()
     screen.fill (white)
-    pygame.FULLSCREEN
     pygame.display.update()
     
