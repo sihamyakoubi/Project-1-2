@@ -2,7 +2,7 @@
 pygame.init()
 pygame.display.set_caption ("Survivor") # titel van het programma (blauwe balk boven in)
 
-width, height = 700, 600
+width, height = 900, 780
 black = (0,0,0)
 white = (255,255,255)
 red = (255,0,0)
@@ -66,11 +66,11 @@ def game_menu():
 
 def Help_Menu():
     Help = pygame.image.load("content/Help.png")
-    Help = pygame.transform.scale(Help,(width,height))
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 quitGame()
+        screen.fill(white)
         screen.blit(Help, (0,0 ))
         button("X",width-20,0,20,20,red,white,game_menu)
              
