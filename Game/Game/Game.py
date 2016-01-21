@@ -1,4 +1,4 @@
-import pygame
+﻿import pygame
 
 pygame.init()
 width, height = 800, 600
@@ -14,6 +14,8 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
-    screen.fill (white)
+            quit()
+
+    screen.fill(white)
     pygame.display.update()
     
