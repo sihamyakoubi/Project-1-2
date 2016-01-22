@@ -19,7 +19,7 @@ class Player:
 
     def playerCreation(self, a, b):
         self.playerID = a + 1
-        self.remainingConditionPoints
+        self.remainingConditionPoints = 15
         self.healthPoints = 100
         if b == 0:
             self.isComputer = False
