@@ -10,9 +10,20 @@ class Empty:
 empty = Empty()
 
 class Player:
-    def __init__(self, id, rcp, bot, turn, hp):
-        self.playerID = id
+    def __init__(self, ID, rcp, bot, ct, hp):
+        self.playerID = ID
         self.remainingConditionPoints = rcp
         self.isComputer = bot
-        self.currentTurn = turn
+        self.currentTurn = ct
         self.healthPoints = hp
+
+    def playerCreation(self, a, b):
+        self.playerID = a + 1
+        self.remainingConditionPoints
+        self.healthPoints = 100
+        if b == 0:
+            self.isComputer = False
+        elif b == 1:
+            self.isComputer = True
+        self.currentTurn = False
+
